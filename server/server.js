@@ -21,6 +21,7 @@ connectDb();
 const app=express();
 const port =process.env.PORT || 5000; 
 
+app.set('view engine','hbs');
 
 app.use(express.json());
 app.use(cors());
@@ -29,7 +30,23 @@ app.use(cors());
 app.get('/',(req,res)=>{
     res.send("working");
 });
+app.get("/home",(req,res)=>{
+    res.render("home",{
+        username:"ishi",
+        posts:"flana dhimkana"
+    })
+});
 
+app.get("/alluser",(req,res)=>{
+    const user=[
+        {name:"ishi",age:19},
+        {name:"harleen",age:50},
+        {name:"leen",age:20}
+    ];
+    res.render("alluser",{
+        user:user
+    });
+});
 //error handling middleware 
 app.use(errorHandler)
 
