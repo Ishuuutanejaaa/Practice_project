@@ -6,12 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    {{>header}}
-    <h1>All users</h1>
-    <ul>
-        {{#each user}}
-        <li>username:{{this.username}},age:{{this.age}}</li>
-        {{/each}}
-    </ul>
+    <h1>header</h1>
+    {{username.username}}
+    {{username.posts}}
 </body>
 </html>

@@ -22,6 +22,8 @@ const app=express();
 const port =process.env.PORT || 5000; 
 
 app.set('view engine','hbs');
+var hbs=require('hbs');
+hbs.registerPartials(__dirname+'/views/partials',function(err){});
 
 app.use(express.json());
 app.use(cors());
@@ -39,9 +41,9 @@ app.get("/home",(req,res)=>{
 
 app.get("/alluser",(req,res)=>{
     const user=[
-        {name:"ishi",age:19},
-        {name:"harleen",age:50},
-        {name:"leen",age:20}
+        {username:"ishi",age:19},
+        {username:"harleen",age:50},
+        {username:"leen",age:20}
     ];
     res.render("alluser",{
         user:user
@@ -49,6 +51,9 @@ app.get("/alluser",(req,res)=>{
 });
 //error handling middleware 
 app.use(errorHandler)
+
+
+app.use("/api/register",require("./routes/userRoutes"));
 
 //app config start 
 app.listen(port,()=>{
