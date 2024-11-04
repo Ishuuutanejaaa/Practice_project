@@ -9,4 +9,5 @@ const{
 router.post("/register",registerUser);
 //route for user login 
 //router.post("/login",loginUser);
+router.post("/login", loginUser);
 module.exports=router;
