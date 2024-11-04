@@ -55,6 +55,8 @@ app.use(errorHandler)
 
 app.use("/api/register",require("./routes/userRoutes"));
 
+app.use("/api/details",require("./routes/doctorsDetails"));
+
 //app config start 
 app.listen(port,()=>{
     console.log(`server running on port http://localhost:${port}`);
