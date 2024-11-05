@@ -1,0 +1,7 @@
+MULTER 
+1. Directly (encrypted files)
+2. Disk Storage
+3. Store in mongoDB
+
+
+helps in file uploading using form 
