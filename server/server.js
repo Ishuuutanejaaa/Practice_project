@@ -12,6 +12,8 @@ const express = require('express')
 const connectDb=require("./config/dbConnection")
 const errorHandler=require('./middlewares/errorHandler')
 const cors=require("cors"); 
+const multer  = require('multer');
+// const upload = multer({ dest: 'uploads/' });
 
 //env file config
 const dotenv=require("dotenv");
@@ -57,6 +59,25 @@ app.use("/api/register",require("./routes/userRoutes"));
 
 app.use("/api/details",require("./routes/doctorsDetails"));
 
+// app.post('/profile', upload.single('avatar'), function (req, res, next) {
+//     // req.file is the `avatar` file
+//     // req.body will hold the text fields, if there were any
+//     console.log(req.body);
+//     console.log(req.file);
+//     return res.redirect("/home");  //for redirecting it back to the home 
+//   });
+
+  const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, '/tmp/my-uploads')
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+      cb(null, file.fieldname + '-' + uniqueSuffix)
+    }
+  })
+  
+  const upload = multer({ storage: storage })
 //app config start 
 app.listen(port,()=>{
     console.log(`server running on port http://localhost:${port}`);
