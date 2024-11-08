@@ -1,0 +1,11 @@
+Heap 
+1. A complete binary tree 
+2. Priority of parents >= Priority of children
+3. min heap mein root left aur right wali branch se kam hoyega 
+4. max heap mein root left aur right wali branch se jyada hoyega 
+5. pi =>  c1 = 2pi+1  c2= 2pi+2
+6. ci = (ci-1)/2
+7. upheaping - if you want to insert a number in a heap you have to add it in the place where there is no leaf and then you have to swap with the upcoming roots if they are bigger then the actual number. 
+8.downheaping - delete karne ke liye
+  
+ 
