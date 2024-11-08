@@ -211,6 +211,10 @@ app.post('/profile', upload.single('avatar'), async (req, res) => {
 // Error handling middleware
 app.use(errorHandler);
 
+app.use("/api/register",require("./routes/userRoutes"));
+
+app.use("/api/details",require("./routes/doctorsDetails"));
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
