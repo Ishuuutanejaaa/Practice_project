@@ -8,9 +8,9 @@
 // //framework configuration 
 
 
-const express = require('express')
-const connectDb=require("./config/dbConnection")
-const errorHandler=require('./middlewares/errorHandler')
+const express = require('express');
+const connectDb=require("./config/dbConnection");
+const errorHandler=require('./middlewares/errorHandler');
 const cors=require("cors"); 
 const mongoose = require('mongoose');
 const dotenv=require("dotenv");

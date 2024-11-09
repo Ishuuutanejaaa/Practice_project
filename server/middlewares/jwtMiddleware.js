@@ -48,10 +48,13 @@
 // // });
 
 var jwt=require('jsonwebtoken');
-const generateToken=(userData)=>{
-    // in this function we are creating new fresh jwt token to provide user,for login/session management or for authorisation purpose.
-    return jwt.sign(userData,process.env.PRIVATE_KEY)
-}
+
+// const generateToken=(userData)=>{
+
+   
+//     // in this function we are creating new fresh jwt token to provide user,for login/session management or for authorisation purpose.
+//     return jwt.sign(userData,process.env.PRIVATE_KEY)
+// }
 const validateJwtToken=(req,res,next)=>{
     // first we are checking that jwt token is available or not 
     const authorization= req.headers.authorization;
@@ -83,7 +86,7 @@ const validateJwtToken=(req,res,next)=>{
     }
 }
 
-module.exports={generateToken,validateJwtToken}
+module.exports={validateJwtToken}
 
 
 
