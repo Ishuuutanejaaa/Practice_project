@@ -1,13 +1,3 @@
-// /*
-// dr  appointment ---- 
-// id:, name:string
-// dr specialization:String
-// //phone no hospital no , address string
-// //available slot:20  */
-
-// //framework configuration 
-
-
 const express = require('express');
 const connectDb=require("./config/dbConnection");
 const errorHandler=require('./middlewares/errorHandler');
@@ -17,9 +7,6 @@ const dotenv=require("dotenv");
 var hbs=require('hbs');
 const path = require("path");
 const multer  = require('multer');
-// const upload = multer({ dest: 'uploads/' }); - to be deleted
-// const Grid = require('gridfs-stream'); -- to be deleted
-// const { Readable } = require('stream');  - to be deleted
 const File = require('./model/file');
 
 
@@ -70,8 +57,8 @@ app.use("/api/register",require("./routes/userRoutes"));
 
 app.use("/api/details",require("./routes/doctorsDetails"));
 
-
-app.use("/api/accdetails",require("./routes/myAccount"));
+app.use("/api/newsletter",require("./routes/newsletterRoutes"));
+// app.use("/api/accdetails",require("./routes/myAccount"));
 
 // // app.post('/profile', upload.single('avatar'), function (req, res, next) {
 // //     // req.file is the `avatar` file
