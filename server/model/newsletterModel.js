@@ -14,7 +14,7 @@ const newsletterSchema = mongoose.Schema(
             require:[true,"please add your date"],
         },
         imageUrl:{
-            type:Number,
+            type:String,
             require:[true,"please add your imageUrl"],
         },
         description:{

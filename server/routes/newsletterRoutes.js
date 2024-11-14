@@ -1,9 +1,8 @@
 const express = require("express");
-const router = express.Router;
-const {getNewsletter , createNewsletter} = require("../controllers/newsletterController");
-const { validateJwtToken } = require("../middlewares/jwtMiddleware");
+const router = express.Router();  // Corrected: add parentheses to create the router instance
+const { getNewsletter, createNewsletter } = require("../controllers/newsletterController");
 
+router.get("/", getNewsletter);
+router.post("/",  createNewsletter);
 
-router.get("/",getNewsletter);
-
-router.post("/",validateJwtToken,createNewsletter);
+module.exports = router;  // Corrected: ensure router is exported correctly
